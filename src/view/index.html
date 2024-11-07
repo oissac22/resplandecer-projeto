@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial</title>
+    <script>
+        function edit() {
+            alert("Você clicou em editar");
+        }
+    </script>
+    <style>
+        .formulario {
+            background-color: green;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form class="formulario" method="POST" action="/api/user">
+        <input placeholder="Nome" name="name" required />
+        <input placeholder="E-mail" name="email" required type="email" />
+        <input placeholder="Senha" type="password" name="password" required />
+        <button>Salvar</button>
+    </form>
+    <p>
+        <h3>Lista de usuário</h3>
+    </p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Password</th>
+                <th>email</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Cássio</td>
+                <td>123456</td>
+                <td>cassio@test.com</td>
+                <td>
+                    <button onclick="edit()">Edit</button>
+                </td><td>
+                    <button>Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ana</td>
+                <td>321654</td>
+                <td>ana@test.com</td>
+                <td>
+                    <button>Edit</button>
+                </td><td>
+                    <button>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
