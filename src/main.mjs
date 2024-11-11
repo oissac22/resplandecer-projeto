@@ -1,5 +1,5 @@
 import express from "express";
-import { inserirUsuario } from "./utils/db.mjs";
+import { inserirUsuario, listaUsuarios } from "./utils/db.mjs";
 
 const Api = express();
 
@@ -17,6 +17,11 @@ Api.post("/api/user", function(req, res) {
     const email = req.body.email;
     inserirUsuario(name, password, email);
     res.send("Registro inserido com sucesso");
+})
+
+Api.get("/api/user", function(req,res) {
+    const users = listaUsuarios();
+    res.send(users);
 })
 
 Api.use(express.static("src/view/"))

@@ -19,3 +19,10 @@ export function inserirUsuario(name, password, email) {
     DATA.push(data);
     salvarJson();
 }
+
+export function listaUsuarios () {
+    return DATA;
+}
+
+
+lerJson();
