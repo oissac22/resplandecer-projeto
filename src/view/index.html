@@ -4,59 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página inicial</title>
-    <script>
-        function edit() {
-            alert("Você clicou em editar");
-        }
-        async function carregarTabela(){
-            const resp = await fetch("/api/user");
-            const json = await resp.json();
-            /*
-                json = [
-                    {
-                        "id":"123456",
-                        "name": "Cássio",
-                        "password": "123456",
-                        "email": "cassio@test.com"
-                    },
-                    {
-                        "id":"123456",
-                        "name": "Cássio",
-                        "password": "123456",
-                        "email": "cassio@test.com"
-                    }
-                ];
-            */
-            const lista = document.getElementById('lista');
-            lista.innerHTML = "";
-            json.forEach(function(element){
-                lista.innerHTML +=  `
-                    <tr>
-                        <td>${element.id}</td>
-                        <td>${element.name}</td>
-                        <td>${element.password}</td>
-                        <td>${element.email}</td>
-                    </tr>
-                `;
-            });
-        }
-        window.addEventListener('DOMContentLoaded', carregarTabela);
-    </script>
-    <style>
-        .formulario {
-            background-color: green;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-    </style>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <form class="formulario" method="POST" action="/api/user">
+    <form class="formulario" id="formulario" method="POST" action="/api/user">
         <input placeholder="Nome" name="name" required />
         <input placeholder="E-mail" name="email" required type="email" />
-        <input placeholder="Senha" type="password" name="password" required />
+        <input placeholder="Senha" type="password" name="password" required id="password" />
+        <input placeholder="Confirmar Senha" type="password" required id="confirmpassword" />
         <button>Salvar</button>
     </form>
     <p>

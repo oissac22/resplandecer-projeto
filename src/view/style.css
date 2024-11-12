@@ -1,0 +1,17 @@
+.formulario {
+    background-color: green;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+h3 {
+    color: red;
+}
+
+@media print {
+    .formulario {
+        background-color: red;
+    }
+}
