@@ -3,6 +3,13 @@ import fs from "fs";
 const ARQUIVO = "dados.json";
 let DATA = [];
 
+export function deletePeloId (id) {
+    DATA = DATA.filter(function(reg) {
+        return reg.id.toString() !== id;
+    })
+    salvarJson();
+}
+
 function lerJson() {
     if (!fs.existsSync(ARQUIVO)) return;
     const texto = fs.readFileSync(ARQUIVO).toString();

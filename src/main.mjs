@@ -1,5 +1,5 @@
 import express from "express";
-import { inserirUsuario, listaUsuarios } from "./utils/db.mjs";
+import { inserirUsuario, listaUsuarios, deletePeloId } from "./utils/db.mjs";
 
 const Api = express();
 
@@ -22,6 +22,12 @@ Api.post("/api/user", function(req, res) {
 Api.get("/api/user", function(req,res) {
     const users = listaUsuarios();
     res.send(users);
+})
+
+Api.delete("/api/user", function(req,res) {
+    const id = req.query.id;
+    deletePeloId(id);
+    res.send('Registro deletado com sucesso');
 })
 
 Api.use(express.static("src/view/"))
