@@ -27,6 +27,12 @@ export function inserirUsuario(name, password, email) {
     salvarJson();
 }
 
+export function editarUsuario(id, name, password, email) {
+    const data = { name, password, email };
+    DATA.push(data);
+    salvarJson();
+}
+
 export function listaUsuarios () {
     return DATA;
 }

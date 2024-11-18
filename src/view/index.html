@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página inicial</title>
-    <script src="./main.js"></script>
+    <script src="./index.js"></script>
     <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <form class="formulario" id="formulario" method="POST" action="/api/user">
-        <input placeholder="Nome" name="name" required />
-        <input placeholder="E-mail" name="email" required type="email" />
-        <input placeholder="Senha" type="password" name="password" required id="password" />
-        <input placeholder="Confirmar Senha" type="password" required id="confirmpassword" />
-        <button>Salvar</button>
-    </form>
+    <div class="menu">
+        <a href="/">Lista</a>
+        <a href="/cadastro.html">Novo</a>
+    </div>
     <p>
         <h3>Lista de usuário</h3>
     </p>
